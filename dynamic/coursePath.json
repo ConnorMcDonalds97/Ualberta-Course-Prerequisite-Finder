@@ -1,0 +1,8 @@
+{
+    "class": "go.TreeModel",
+    "nodeDataArray": [
+    { "key": 1, "course": "CMPUT 175" },
+    { "key": 2, "course": "CMPUT 174", "parent": 1 },
+    { "key": 3, "course": "MATH 144", "parent": 1 }
+    ]
+}
