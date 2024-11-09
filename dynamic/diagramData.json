@@ -1,0 +1,15 @@
+{
+    "nodeDataArray": [
+      { "key": 1, "course": "CMPUT 201" },
+      { "key": 2, "course": "CMPUT 175" },
+      { "key": 3, "course": "MATH 144" },
+      { "key": 4, "course": "CMPUT 179" }
+    ],
+    "linkDataArray": [
+      { "from": 1, "to": 2, "color": "#005533" },
+      { "from": 1, "to": 4, "color": "#005555" },
+      { "from": 2, "to": 3, "color": "#550000" },
+      { "from": 4, "to": 3, "color": "#000055" }
+    ]
+  }
+  
