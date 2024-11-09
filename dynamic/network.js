@@ -27,7 +27,7 @@ myDiagram.nodeTemplate =
     .add(
         new go.TextBlock("Default Text",  // the initial value for TextBlock.text
             // some room around the text, a larger font, and a white stroke:
-            { margin: 12, stroke: "white", font: "16px sans-serif" })
+            { margin: 12, stroke: "white", font: "16px sans-serif", textAlign: "center" })
         // TextBlock.text is data bound to the "name" property of the model data
         .bind("text", "course"),
         )
@@ -40,15 +40,32 @@ myDiagram.linkTemplate =
       { routing: go.Routing.Orthogonal, corner: 5 })
     .add(
       // the link path, a Shape
-      new go.Shape({ strokeWidth: 3, stroke: "#555" }),
+      new go.Shape({ strokeWidth: 3 })
+      .bind("stroke", "color"),
       // if we wanted an arrowhead we would also add another Shape with toArrow defined:
       //new go.Shape({  toArrow: "Standard", stroke: null  })
     );
 
+// // Fetch JSON data and apply it to the model
+// fetch("diagramData.json")
+//   .then(response => response.json())
+//   .then(data => {
+//     myDiagram.model = new go.GraphLinksModel(data.nodeDataArray, data.linkDataArray);
+//   })
+//   .catch(error => console.error("Error loading JSON data:", error));
+
+
 // fetch the json file
-myDiagram.model = new go.TreeModel(
-  [
-    { key: 1, course: "CMPUT 175" },
-    { key: 2, course: "CMPUT 174", parent: 1 },
-    { key: 3, course: "MATH 144", parent: 1 }
+myDiagram.model = new go.GraphLinksModel(
+  [ // the nodeDataArray
+    { key: 1, course: "CMPUT 201" },
+    { key: 2, course: "CMPUT 175"},
+    { key: 3, course: "MATH 144"},
+    { key: 4, course: "CMPUT 179" }
+  ],
+  [ // the linkDataArray
+    { from: 1, to: 2, color: "#005533" },
+    { from: 1, to: 4, color: "#005555" },
+    { from: 2, to: 3, color: "#550000" },
+    { from: 4, to: 3, color: "#000055" }
   ]);
