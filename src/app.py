@@ -24,7 +24,7 @@ def receive_data():
     course_list = userInput(message)
     print(course_list)
     
-    createDiagram.dumpCourseToJSON(course_list, '/home/kcao6/Ualberta-Course-Prerequisite-Finder/src/static/js/JSON/diagramData.json')
+    createDiagram.dumpCourseToJSON(course_list, 'static/js/JSON/diagramData.json')
     
     return jsonify(response)
 
