@@ -148,8 +148,8 @@ function changeMainTheme() {
 
 const footer = document.createElement("div")
 footer.setAttribute("id", "footer")
-footer.setAttribute("style", "padding: 16px; margin: 16px; width: 100%; background-color: #285D39; color: white; font-size: 16px; font-family: Verdana; display: flex; flex-direction: column; align-items: center; justify-content: center;")
-footer.setAttribute("class", "box-div")
+footer.setAttribute("style", "padding: 16px; margin: 16px 16px 0px 16px; width: 100%; background-color: #285D39; color: white; font-size: 16px; font-family: Verdana; display: flex; flex-direction: column; align-items: center; justify-content: center;")
+footer.setAttribute("class", "box-div theme-color")
 
 // Information
 const about = document.createElement("div")
