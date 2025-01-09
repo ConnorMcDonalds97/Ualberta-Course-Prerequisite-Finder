@@ -11,31 +11,7 @@
 <body>
     <script src="../static/js/script.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <div style="display: flex; flex-direction: row; gap: 20px">
-        <div class="box-div theme-color" style="margin-bottom: 20px;">
-            <p class="select">Theme: </p>
-            <select class="select-box" id="theme" onchange="changeTheme(), changeMainTheme()">
-                <option value="base" selected="">Base</option>
-                <option value="pretty">Pretty</option>
-            </select>
-        </div>
+    <script src="../static/js/network.js"></script>
 
-        <div class="box-div theme-color" style="margin-bottom: 20px;">
-            <p class="select">Visible Levels: </p>
-            <select id="level-chooser" class="select-box" onchange="changeLevelView()">
-                <option value="1">Level 1</option>
-                <option value="2">Level 2</option>
-                <option value="3">Level 3</option>
-                <option value="4">Level 4</option>
-                <option value="100" selected="">All Levels</option>
-            </select>
-        </div>
-    </div>
-    
-    <div id="myDiagramDiv"
-     style="width: 95%; height: 600px; background-color: #DAE4E4; border-radius: 20px;"></div>
-     <script src="../static/js/network.js"></script>
-
-     <script>body.appendChild(footer)</script>
 </body>
 </html>

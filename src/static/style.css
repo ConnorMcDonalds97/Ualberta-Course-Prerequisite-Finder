@@ -6,12 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0px
+    margin-top: 0px;
+    text-align: center;
+    align-self: stretch;
 }
 
 .main-header {
     color: white;
-    font-size: 48px;
+    font-size: 200%;
     font-family: Verdana;
 }
 
@@ -82,4 +84,14 @@
 
 .github-link:hover {
     color: #88AbF5;
+}
+
+#googleform, #googleform:visited, #googleform:active{
+    color:white;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
