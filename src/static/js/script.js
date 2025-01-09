@@ -58,7 +58,7 @@ function sendData(course) {
 }
 
 const body = document.querySelector("body");
-body.setAttribute("style", "display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0px")
+body.setAttribute("style", "width: 100%; height: 100%;display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin: 0; padding: 0; overflow-y:auto; overflow-x:hidden;");
 
 
 ///
@@ -101,27 +101,110 @@ button.textContent = "Submit"
 
 
 const secondRowAll = document.createElement("div")
-secondRowAll.setAttribute("style", "position: relative; width: 100%")
+secondRowAll.setAttribute("style", "width: 100%")
 
 const secondRow = document.createElement("div")
 secondRow.setAttribute("style", "display: flex; justify-content: center; align-items: center")
 
 const legend = document.createElement("div")
 legend.setAttribute("class", "theme-color legend")
-legend.textContent = "Tip: Classes connected with the same colour line are equivalent. You can do either one."
+legend.setAttribute("style", `
+  position: relative;
+  white-space: pre-wrap;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 4px 16px 0 16px;
+  font-size: 100%;
+  word-wrap: break-word;
+  line-height:1.5;
+`);
+legend.innerHTML = 'TIPS:\n1. Classes connected with the same colour line are equivalent. You can do either one.\n2. Use the level selector to make it easier to view the prerequisites.\n3. You can pinch to zoom in and out on the map on mobile!\nPlease fill out our google form below and tell us how we can do better! <a id="googleform" href="https://docs.google.com/forms/d/e/1FAIpQLScO6nL14NhmvNW-diiLTFdZJnFgiDLey2pYIyfZPHmTrB7DxQ/viewform" rel="noopener noreferrer" target="_blank">Google Form</a>'
 
-secondRowAll.appendChild(legend)
 secondRow.appendChild(userInput)
 secondRow.appendChild(button)
 secondRowAll.appendChild(secondRow)
 
 body.appendChild(secondRowAll)
 
+  // Container for theme and levels
+  const container = document.createElement("div");
+  container.setAttribute(
+      "style",
+      "display: flex; flex-direction: row; gap: 20px; margin: 0 16px 0 16px;"
+  );
 
-//body.appendChild(legend)
-//inputs.appendChild(userInput)
-//inputs.appendChild(button)
-//body.appendChild(inputs)
+  // Theme selector
+  const themeDiv = document.createElement("div");
+  themeDiv.setAttribute("class", "box-div theme-color");
+  themeDiv.setAttribute("style", "margin-bottom: 20px;");
+
+  const themeLabel = document.createElement("p");
+  themeLabel.setAttribute("class", "select");
+  themeLabel.textContent = "Theme: ";
+  themeDiv.appendChild(themeLabel);
+
+  const themeSelect = document.createElement("select");
+  themeSelect.setAttribute("class", "select-box");
+  themeSelect.setAttribute("id", "theme");
+  themeSelect.setAttribute("onchange", "changeTheme(), changeMainTheme()");
+
+  const themeOptions = [
+      { value: "base", text: "Base", selected: true },
+      { value: "pretty", text: "Pretty", selected: false },
+  ];
+  themeOptions.forEach((optionData) => {
+      const option = document.createElement("option");
+      option.value = optionData.value;
+      option.textContent = optionData.text;
+      if (optionData.selected) option.setAttribute("selected", "");
+      themeSelect.appendChild(option);
+  });
+
+  themeDiv.appendChild(themeSelect);
+
+  // Levels selector
+  const levelsDiv = document.createElement("div");
+  levelsDiv.setAttribute("class", "box-div theme-color");
+  levelsDiv.setAttribute("style", "margin-bottom: 20px;");
+
+  const levelsLabel = document.createElement("p");
+  levelsLabel.setAttribute("class", "select");
+  levelsLabel.textContent = "Visible Levels: ";
+  levelsDiv.appendChild(levelsLabel);
+
+  const levelsSelect = document.createElement("select");
+  levelsSelect.setAttribute("class", "select-box");
+  levelsSelect.setAttribute("id", "level-chooser");
+  levelsSelect.setAttribute("onchange", "changeLevelView()");
+
+  const levelOptions = [
+      { value: "1", text: "Level 1" },
+      { value: "2", text: "Level 2" },
+      { value: "3", text: "Level 3" },
+      { value: "4", text: "Level 4" },
+      { value: "100", text: "All Levels", selected: true },
+  ];
+  levelOptions.forEach((optionData) => {
+      const option = document.createElement("option");
+      option.value = optionData.value;
+      option.textContent = optionData.text;
+      if (optionData.selected) option.setAttribute("selected", "");
+      levelsSelect.appendChild(option);
+  });
+
+  levelsDiv.appendChild(levelsSelect);
+
+  // Append both divs to the container
+  container.appendChild(themeDiv);
+  container.appendChild(levelsDiv);
+
+  // Append the container to the body
+  body.insertBefore(container, document.getElementById("myDiagramDiv"));
+;
+
+body.appendChild(legend)
 
 //theme build
 theme_colors = {
@@ -140,7 +223,16 @@ function changeMainTheme() {
       element.style.backgroundColor = theme_colors[document.getElementById('theme').value];;
   });
 }
+// Create the myDiagramDiv element
+const myDiagramDiv = document.createElement("div");
+myDiagramDiv.setAttribute("id", "myDiagramDiv");
+myDiagramDiv.setAttribute(
+  "style",
+  "width: 95%; height: 600px; background-color: #DAE4E4; border-radius: 20px; border-style: solid; border-color: #285D39"
+);
 
+// Append the myDiagramDiv element to the body
+body.appendChild(myDiagramDiv);
 
 ////////////////////////////////////////////////
 // FOOTER     //////////////////////////////////
@@ -216,4 +308,5 @@ memberData.forEach(member => {
 document.body.appendChild(members);
 
 footer.appendChild(members)
+
 body.appendChild(footer)
