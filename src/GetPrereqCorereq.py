@@ -21,6 +21,8 @@ Return a tuple with three items:
 (COURSE_CODE, list of prereqs, list of coreqs)
 '''
 import re
+PREREQBLOCKLIST = ['Prerequisite:', 'Prerequisites:', 'Prerequisite', 'Prerequisites']
+
 
 class Stack:
     def __init__(self):
@@ -145,11 +147,10 @@ def course_codes_list(prereq_string):
     output: prereq_list (2D list of all prerequisite classes)
 '''
 def prereqs(parent_text: str):
-    prereqBlockList = ['Prerequisite:', 'Prerequisites:', 'Prerequisite', 'Prerequisites']
     parent_text=parent_text.split()
     prereq_idx=0
     for i in range(len(parent_text)):
-        if parent_text[i] in prereqBlockList:
+        if parent_text[i] in PREREQBLOCKLIST:
             prereq_idx = i  #index for the word "Prerequisite(s)"
     if not prereq_idx:
         return None
