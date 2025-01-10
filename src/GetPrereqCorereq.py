@@ -66,7 +66,7 @@ class Stack:
 
 
 def course_code(parent_text):
-     #parent_text=parent_course.split()
+    #parent_text=parent_course.split()
     #get the course code
     parent_text = parent_text.replace(" ", "_")
     # print("PARENT TEXT:", parent_text)
@@ -86,7 +86,7 @@ def course_codes_list(prereq_string):
     '''
     This code only runs if the word "Prereq" etc is in the string.
 
-    Inputs: prereq_or (str) is a string. ie 
+    Inputs: prereq_string (str) is a string. ie 
     "Prerequisites: one of CMPUT 101, 174, or 274; one of MATH 100, 114, 117, 134, 144, or 154; 
     and one of STAT 151, 161, 181, 235, 265, SCI 151, or MATH 181."
 
@@ -140,11 +140,16 @@ def course_codes_list(prereq_string):
     return prereq_list       
         
 
-def prereqs(parent_text):
+''' generates the prerequisite list
+    input: parent_text (block text that holds the course description)
+    output: prereq_list (2D list of all prerequisite classes)
+'''
+def prereqs(parent_text: str):
+    prereqBlockList = ['Prerequisite:', 'Prerequisites:', 'Prerequisite', 'Prerequisites']
     parent_text=parent_text.split()
     prereq_idx=0
     for i in range(len(parent_text)):
-        if parent_text[i] == "Prerequisite:" or parent_text[i] == "Prerequisites:":
+        if parent_text[i] in prereqBlockList:
             prereq_idx = i  #index for the word "Prerequisite(s)"
     if not prereq_idx:
         return None
@@ -159,8 +164,6 @@ def prereqs(parent_text):
     
     prereq_list= course_codes_list(prereq_text_block)
     return(prereq_list)
-              
-
 
 def getPrereqs(coursetext):
         
