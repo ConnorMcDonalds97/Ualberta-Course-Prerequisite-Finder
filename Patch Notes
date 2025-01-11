@@ -1,0 +1,9 @@
+Patch notes for the public to see
+
+
+Ver 1.0.0 (09-Jan-2025)
+  - Released to public
+
+Ver 1.0.1 (10-Jan-2025)
+  - added a fix to courses whose course descriptions do not have a colon (:) after "Prerequisites"
+    Target Courses: GENET 302, CHEM 261
