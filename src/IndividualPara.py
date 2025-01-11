@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+'''
+like 99% sure this code is not used
+'''
+
 
 def isolateParagraph(soup):
     '''
@@ -9,17 +13,6 @@ def isolateParagraph(soup):
     
     # soup.find_all returns a list of containers that include different parts of the website
     text = soup.find_all("div", {"class": "container"})
-    # print(type(text))
-
-
-    '''
-    redundant code used to find the correct container
-    for i in range(len(text)):
-        print(f"\n\n line: {i} \n\n")
-        elementTag = text[i].get_text()
-        print(elementTag)
-    '''
-    #elementTag =  text[3].get_text() #container at text[3] contains the paragraph we want
     
     # Tag contains the course number and the course description which contains information about prereq
     elementTag = text[3]

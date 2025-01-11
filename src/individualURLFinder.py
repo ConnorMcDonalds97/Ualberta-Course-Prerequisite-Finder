@@ -5,7 +5,7 @@
 
 import requests
 from bs4 import BeautifulSoup
-from IndividualPara import isolateParagraph
+# from IndividualPara import isolateParagraph
 from courseClass import Course
 import GetPrereqCorereq
 
@@ -24,17 +24,13 @@ def isolateParagraph(soup):
 
     # soup.find_all returns a list of containers that include different parts of the website
     text = soup.find_all("div", {"class": "container"})
-    #elementTag =  text[3].get_text() #container at text[3] contains the paragraph we want
     
     # Tag contains the course number and the course description which contains information about prereq
     elementTag = text[3]
     
     courseNumber = elementTag.find("h1", {"class": "m-0"}).get_text().strip() # Find the course number as text
-    
     courseDesc = elementTag.find_all("p")[1].get_text().strip()     # Finds the description of the course
-    
     courseInfo = courseNumber + '\n' + courseDesc
-    
 
     #print(f"{courseInfo}\n\n")
 
@@ -53,7 +49,7 @@ def nextURL(classCode: str) -> str:
     
     newURL = BASEURL + '/' + codeList[0] + '/' + codeList[1]
 
-    print(newURL)
+    # print(newURL)
     return newURL
 
 def getContent(url):
@@ -71,7 +67,7 @@ def convertCourseCode(courseCode):
     newUrl = nextURL(courseCode)    # gets the newURL to get the data for the courseCode
 
     if newUrl == 'INVALID': 
-        print("RETURINGING INVALID URL")  
+        # print("RETURINGING INVALID URL")  
         return "INVALID"
     
     soup = getContent(newUrl)
@@ -80,5 +76,5 @@ def convertCourseCode(courseCode):
         return 'INVALID'
     
     prereqsList = GetPrereqCorereq.getPrereqs(paragraph)
-    print(f"prereqsList: {prereqsList}")
+    # print(f"prereqsList: {prereqsList}")
     return prereqsList

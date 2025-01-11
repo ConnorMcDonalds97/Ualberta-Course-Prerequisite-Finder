@@ -38,7 +38,7 @@ def dumpCourseToJSON(course_list, json_file):
         if (i_course.prereqs == None or len(i_course.prereqs) == 0):
             continue
 
-        print(i_course.name, "prereqs", i_course.prereqs, type(i_course.prereqs))
+        # print(i_course.name, "prereqs", i_course.prereqs, type(i_course.prereqs))
 
         for colors in i_course.prereqs:
             if (type(colors) != list):
@@ -54,7 +54,7 @@ def dumpCourseToJSON(course_list, json_file):
     # Write the JSON file
     write_file = open(json_file, 'w')
 
-    print("final node data:", nodeDataArray)
+    # print("final node data:", nodeDataArray)
 
     all_data = [nodeDataArray, linkDataArray]
     write_file.write(json.dumps(all_data))

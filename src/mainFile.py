@@ -10,8 +10,8 @@ def createLayer(givenT):
     This is a function that will recursively find all of the prerequisite courses as given 
     by givenT
     '''
-    print("givenT: ", givenT)
-    # cases for if givenT is not valid
+    if givenT == 'INVALID':
+        print("givenT: ", givenT)
 
     courseName = givenT[0] #original course
     prereqs = givenT[1] #the prereqs for the original course
@@ -32,7 +32,7 @@ def createLayer(givenT):
     COURSENAMELIST.append(courseName)
     
     for i in range(len(course.prereqs)):    # looping through all ANDs
-        print("course prereqs",course.prereqs[i], "course prereqs length ",len(course.prereqs[i]))
+        # print("course prereqs",course.prereqs[i], "course prereqs length ",len(course.prereqs[i]))
         
         if (isinstance((course.prereqs[i]), str) ):
             pass
@@ -42,7 +42,6 @@ def createLayer(givenT):
 
                 if courseCode not in COURSENAMELIST:
                     prereqsList = iFinder.convertCourseCode(courseCode) # converts the coursecode into the prereqs list of that course
-                    # print("1 createlayer", prereqsList)
                     if prereqsList!='INVALID':
                         createLayer(prereqsList)
         elif len(course.prereqs[i]) == 1: # only one course is a prereq
@@ -50,7 +49,6 @@ def createLayer(givenT):
 
             if courseCode not in COURSENAMELIST:
                 prereqsList = iFinder.convertCourseCode(courseCode)
-                # print("2 createlayer")
                 if prereqsList != 'INVALID':
                     createLayer(prereqsList)
                 else:
@@ -59,7 +57,7 @@ def createLayer(givenT):
         elif len(course.prereqs[i]) == 0:
             return
         else:
-            print("BreakCase")
+            print("THIS SHOULD NEVER HAPPEN")
 
 
 def userInput(name):
@@ -77,28 +75,26 @@ def userInput(name):
 
     print("THE NAME: ", name)
     prereqsList = iFinder.convertCourseCode(name)
-    # print("3 createlayer")
     createLayer(prereqsList)
     
-    for i in COURSELIST:
-        print(i.name)
+    # for i in COURSELIST:
+        # print(i.name)
         
     return COURSELIST
 
-def main():
+# def main():
 
-    userInput = 'MATH 315'
+#     userInput = 'MATH 315'
     
 
-    prereqsList = iFinder.convertCourseCode(userInput)
-    # print("4 createlayer")
-    createLayer(prereqsList)
+#     prereqsList = iFinder.convertCourseCode(userInput)
+#     createLayer(prereqsList)
     
     
-    for i in COURSELIST:
-        print(i.name)
-    print(COURSENAMELIST)
+#     for i in COURSELIST:
+#         print(i.name)
+#     print(COURSENAMELIST)
     
     
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
