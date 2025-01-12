@@ -20,6 +20,7 @@ Allows the user to view each level of courses they need to take, from 100-Level 
 
 <img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/LevelViewerClip.gif" width="838" height="475"/>
 
+<<<<<<< HEAD
 
 ### Interactive Graph
 The interactive graph allows the user to manipulate the it as they please, including moving the individual cells, and zooming in and out. This may help the user rearrange the graph to their tastes. This feature also works on mobile!
@@ -28,5 +29,11 @@ The interactive graph allows the user to manipulate the it as they please, inclu
 
 ## Contributing
 We welcome feedback of all kinds from users or fellow developers through the feedback form on our website for new features, changes, or improvements that can be made to our web-app.
+=======
+# Development
+
+### Testing your work
+To run a test version of your code on a local host, run app.py in a terminal window and open the IPv4 address in your browser
+>>>>>>> fe8dbbdfef72c665976c1edb3a1a2d6aac605e47
 
 https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA
