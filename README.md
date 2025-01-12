@@ -1,6 +1,16 @@
 # UAlberta Course Prerequisites Finder
 [UAlberta Course Prerequisites Finder](https://www.uaprereqs.ca/) (UaPrereqs for short) provides an easy way for students to find and visualize the right prerequisites they need for any course. The program displays the inputted course and all their prerequisites in a neat, interactive flowchart for ease of visualization of what the user needs to take.
 
+This project originated as a hackathon project for HackED Beta. The project portfolio can be found on Devpost [here](https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA).
+ 
+## Table of Contents
+
+- [Usage](#usage)
+- [Features](#features)
+    - [Level Viwer](#level-viewer)
+    - [Interactive Graph](#interactive-graph)
+- [Contributing](#contributing)
+- [Development]()
 
 # Usage
 
@@ -36,5 +46,3 @@ You will need Node.js and npm installed. Fork the repo and install necessary dep
 
 ### Testing your work
 To run a test version of your code on a local host, run app.py in a terminal window and open the IPv4 address in your browser
-
-https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA
