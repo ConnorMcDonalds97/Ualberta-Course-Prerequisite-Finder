@@ -36,9 +36,6 @@ The interactive graph allows the user to manipulate the it as they please, inclu
 
 <img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/InterGraph.gif" width="838" height="475"/>
 
-## Contributing
-We welcome feedback of all kinds from users or fellow developers through the feedback form on our website for new features, changes, or improvements that can be made to our web-app.
-
 # Development
 
 ### Installation
@@ -46,3 +43,7 @@ You will need Node.js and npm installed. Fork the repo and install necessary dep
 
 ### Testing your work
 To run a test version of your code on a local host, run app.py in a terminal window and open the IPv4 address in your browser
+
+# Contributing
+We welcome feedback of all kinds from users or fellow developers through the feedback form on our website for new features, changes, or improvements that can be made to our web-app.
+
