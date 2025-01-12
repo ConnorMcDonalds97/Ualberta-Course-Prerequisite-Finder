@@ -21,20 +21,20 @@ UaPrereqs was designed with simplicity in mind, to use it:
 
 After searching for the course and it's prerequisites, a flowchart will be displayed for the user.
 
-<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/Usage%20Clip.gif" width="838" height="475"/>
+<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/main/Assets/Usage%20Clip.gif" width="838" height="475"/>
 
 # Features
 
 ### Level Viewer
 Allows the user to view each level of courses they need to take, from 100-Level to 400-Level.
 
-<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/LevelViewerClip.gif" width="838" height="475"/>
+<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/main/Assets/LevelViewerClip.gif" width="838" height="475"/>
 
 
 ### Interactive Graph
 The interactive graph allows the user to manipulate the it as they please, including moving the individual cells, and zooming in and out. This may help the user rearrange the graph to their tastes. This feature also works on mobile!
 
-<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/InterGraph.gif" width="838" height="475"/>
+<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/main/Assets/InterGraph.gif" width="838" height="475"/>
 
 # Development
 
