@@ -29,4 +29,12 @@ The interactive graph allows the user to manipulate the it as they please, inclu
 ## Contributing
 We welcome feedback of all kinds from users or fellow developers through the feedback form on our website for new features, changes, or improvements that can be made to our web-app.
 
+# Development
+
+### Installation
+You will need Node.js and npm installed. Fork the repo and install necessary dependencies.
+
+### Testing your work
+To run a test version of your code on a local host, run app.py in a terminal window and open the IPv4 address in your browser
+
 https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA
