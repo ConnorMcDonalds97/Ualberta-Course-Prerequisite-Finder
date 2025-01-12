@@ -11,7 +11,7 @@ UaPrereqs was designed with ease of use in mind, to use it:
 
 After searching for the course and it's prerequisites, a flowchart will be displayed for the user.
 
-<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/Usage%20Clip.gif" width="1280" height="726"/>
+<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/Usage%20Clip.gif" width="1904" height="1080"/>
 
 
 https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA
