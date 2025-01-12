@@ -13,5 +13,10 @@ After searching for the course and it's prerequisites, a flowchart will be displ
 
 <img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/Usage%20Clip.gif" width="838" height="475"/>
 
+## Features
+
+### Level Viewer
+Allows the user to view each level of courses they need to take, from 100-Level to 400-Level.
+<img src="https://github.com/ConnorMcDonalds97/Ualberta-Course-Prerequisite-Finder/blob/READMEUpdate/Assets/Usage%20LevelViewer.gif" width="838" height="475"/>
 
 https://devpost.com/software/ualberta-course-prereq-helper/joins/2SXMctZ9iK20C96roxzCeA
